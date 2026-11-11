@@ -1,4 +1,4 @@
-﻿namespace Fractalize.Ddd.SharedKernel;
+namespace Fractalize.Ddd.SharedKernel;
 
 /// <summary>
 /// Serves as the base class for value objects, providing a foundation for implementing value-based equality and
@@ -66,7 +66,7 @@ public abstract class ValueObjectLegacyBase : IComparable, IComparable<ValueObje
     /// <returns>A value less than zero if the current instance precedes <paramref name="other"/> in the sort order; zero if they
     /// are equal; or a value greater than zero if the current instance follows <paramref name="other"/> in the sort
     /// order.</returns>
-    public int CompareTo(ValueObjectLegacyBase? other) => 
+    public int CompareTo(ValueObjectLegacyBase? other) =>
         CompareTo(other as object);
 
     /// <summary>

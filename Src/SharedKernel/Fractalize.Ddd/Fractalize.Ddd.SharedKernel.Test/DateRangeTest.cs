@@ -1,4 +1,4 @@
-﻿using Xunit.Categories;
+using Xunit.Categories;
 
 namespace Fractalize.Ddd.SharedKernel.Test;
 
@@ -79,5 +79,16 @@ public class DateRangeTest
         //Assert
         Assert.Equal(startDate, dateRange.Start);
         Assert.Equal(endDate, dateRange.End);
+    }
+
+    [Fact]
+    [UnitTest]
+    public void Overlaps_WithARangeThatStartsInside_ReturnsTrue()
+    {
+        var start = new DateTimeOffset(2026, 1, 1, 10, 0, 0, TimeSpan.Zero);
+        var range = new DateRange(start, start.AddHours(2));
+        var other = new DateRange(start.AddHours(1), start.AddHours(3));
+
+        Assert.True(range.Overlaps(other));
     }
 }

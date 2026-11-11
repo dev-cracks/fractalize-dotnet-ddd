@@ -1,4 +1,4 @@
-﻿namespace Fractalize.Ddd.SharedKernel;
+namespace Fractalize.Ddd.SharedKernel;
 
 public interface IUnitOfWorkBase : IDisposable
 {

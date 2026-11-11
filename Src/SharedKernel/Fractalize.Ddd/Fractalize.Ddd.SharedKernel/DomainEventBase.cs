@@ -1,4 +1,4 @@
-﻿namespace Fractalize.Ddd.SharedKernel;
+namespace Fractalize.Ddd.SharedKernel;
 
 /// <summary>
 /// TODO

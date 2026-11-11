@@ -1,4 +1,4 @@
-﻿namespace Fractalize.Ddd.SharedKernel;
+namespace Fractalize.Ddd.SharedKernel;
 
 /// <summary>
 /// Serves as a base class for all entities in the application, providing a common foundation for derived entity types.

@@ -1,4 +1,4 @@
-﻿namespace Fractalize.Ddd.SharedKernel.Test;
+namespace Fractalize.Ddd.SharedKernel.Test;
 
 public class ValueObjectBaseLegacyTest
 {
@@ -6,7 +6,7 @@ public class ValueObjectBaseLegacyTest
     public void ValueObjectBaseLegacy_WithSameValues_ShouldBeEquals()
     {
         var money1 = new MoneyStub()
-        { 
+        {
             Amount = 25,
             Currency = "USD"
         };
@@ -48,7 +48,7 @@ internal class MoneyStub : ValueObjectLegacyBase
     public required string Currency { get; set; }
     public required decimal Amount { get; set; }
 
-    protected override IEnumerable<object> GetEqualityComponents() 
+    protected override IEnumerable<object> GetEqualityComponents()
     {
         yield return Currency;
         yield return Amount;

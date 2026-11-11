@@ -1,4 +1,4 @@
-﻿using Moq;
+using Moq;
 using System.Linq.Expressions;
 
 namespace Fractalize.Ddd.SharedKernel.Test;
