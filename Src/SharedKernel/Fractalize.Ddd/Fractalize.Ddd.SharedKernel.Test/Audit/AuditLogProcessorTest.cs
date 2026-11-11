@@ -1,4 +1,4 @@
-﻿using Fractalize.Ddd.SharedKernel.Audit;
+using Fractalize.Ddd.SharedKernel.Audit;
 using Moq;
 using Newtonsoft.Json;
 using Xunit.Categories;
@@ -52,7 +52,7 @@ public class AuditLogProcessorTest
 
     [Fact]
     [UnitTest]
-    public async Task temp_GettingTimeFromClockStamp_IsUseAsAuditEventCreationTime()
+    public void AuditedEvent_SerializedAndDeserialized_KeepsItsValues()
     {
         //Arrange
         var eventTarget = new AuditedEvent()
@@ -64,5 +64,9 @@ public class AuditLogProcessorTest
         //Act && Assert
         var rawEvent = JsonConvert.SerializeObject(eventTarget);
         var deserializedEvent = JsonConvert.DeserializeObject<AuditedEvent>(rawEvent);
+        Assert.NotNull(deserializedEvent);
+        Assert.Equal(eventTarget.Id, deserializedEvent.Id);
+        Assert.Equal(eventTarget.UserId, deserializedEvent.UserId);
+        Assert.Equal(eventTarget.CreatedAt, deserializedEvent.CreatedAt);
     }
 }

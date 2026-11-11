@@ -1,4 +1,4 @@
-﻿namespace Fractalize.Ddd.SharedKernel.Audit;
+namespace Fractalize.Ddd.SharedKernel.Audit;
 
 public interface IAuditRepository
 {

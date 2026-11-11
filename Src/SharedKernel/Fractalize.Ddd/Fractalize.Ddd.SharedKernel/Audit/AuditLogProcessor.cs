@@ -1,4 +1,4 @@
-﻿namespace Fractalize.Ddd.SharedKernel.Audit;
+namespace Fractalize.Ddd.SharedKernel.Audit;
 
 public class AuditLogProcessor(
     IClockStamp clockStamp,

@@ -1,4 +1,4 @@
-﻿namespace Fractalize.Ddd.SharedKernel.Test;
+namespace Fractalize.Ddd.SharedKernel.Test;
 
 public class ValueObjectBaseTest
 {
@@ -70,7 +70,7 @@ internal record AddressStub(string street, int number, ClassStub tmpClass) : Val
 
 internal record AddressStub2(string street, int number, NameStub tmpStub) : ValueObjectBase;
 
-internal class ClassStub() 
+internal class ClassStub()
 {
     public string Street { get; set; }
     public int Number { get; set; }

@@ -1,9 +1,9 @@
-﻿using System.Linq.Expressions;
+using System.Linq.Expressions;
 
 namespace Fractalize.Ddd.SharedKernel;
 
 /// <summary>
-/// 
+///
 /// </summary>
 /// <typeparam name="TEntity"></typeparam>
 /// <typeparam name="Tid"></typeparam>
