@@ -91,4 +91,31 @@ public class DateRangeTest
 
         Assert.True(range.Overlaps(other));
     }
+
+    [Theory]
+    [UnitTest]
+    [InlineData(3, 4)]
+    [InlineData(-2, -1)]
+    [InlineData(2, 3)]
+    [InlineData(-1, 0)]
+    public void Overlaps_WithARangeOutside_ReturnsFalse(int startHours, int endHours)
+    {
+        var start = new DateTimeOffset(2026, 1, 1, 10, 0, 0, TimeSpan.Zero);
+        var range = new DateRange(start, start.AddHours(2));
+        var other = new DateRange(start.AddHours(startHours), start.AddHours(endHours));
+
+        Assert.False(range.Overlaps(other));
+    }
+
+    [Fact]
+    [UnitTest]
+    public void Overlaps_WithARangeThatContainsIt_ReturnsTrue()
+    {
+        var start = new DateTimeOffset(2026, 1, 1, 10, 0, 0, TimeSpan.Zero);
+        var range = new DateRange(start, start.AddHours(2));
+        var other = new DateRange(start.AddHours(-1), start.AddHours(3));
+
+        Assert.True(range.Overlaps(other));
+        Assert.True(other.Overlaps(range));
+    }
 }
